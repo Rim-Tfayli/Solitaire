@@ -48,32 +48,37 @@
 }
 
 .about-section{
-    padding: 1.5rem;
+    padding: 2rem;
     position: relative;
     top: 3rem;
+    padding-right:3rem;
+    padding-left:3rem;
 }
 .about-section h2{
-    color: #3f3b3b;
+    color: rgb(105, 13, 3);
     font-style: normal;
 }
 
 .about-section p{
+    color: #3f3b3b;
     padding-top: 1rem;
-    color: black;
     font-size: clamp(1rem, 1.5vw, 1rem);
-    text-align: justify;
     line-height: 1.5;
+    font-weight: lighter;
 }
 
 .leaderboard{
     position: relative;
     padding: 1.5rem;
+    padding-right:3rem;
+    padding-left:3rem;
 }
 .leaderboard h1{
     font-size: clamp(3.5rem, 6vw, 5.5rem);
     font-family: 'Abril Fatface', serif;
     text-shadow: 2px 2px 4px #7c7676;
-    padding-top: 5rem;
+    padding-top: 3rem;
+    color:  rgb(105, 13, 3);
 }
 
 .footer{
@@ -81,7 +86,7 @@
     width: 100%;
     bottom: 0px;
     text-align: center;
-    background-color: blue;
+    background-color: #3f3b3b;
 }
 
 
