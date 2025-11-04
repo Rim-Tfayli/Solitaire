@@ -81,15 +81,29 @@
     padding-top: 3rem;
     color:  rgb(142, 21, 8);
 }
+.leaderboard a{
+    position: absolute;
+    text-decoration: none;
+    font-size: clamp(1rem, 1.5vw, 1rem);
+    background-color: darkred;
+    color: #a59f9f;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+.leaderboard a:hover{
+    transform: translateY(-20%);
+}
 
 .footer{
     position: relative;
     width: 100%;
     bottom: 0px;
     text-align: center;
+    padding-top: 8rem;
+}
+.footer p{
     border-top: 0.025rem solid rgb(39, 37, 37);
 }
-
 
 .footer *{
     color: rgb(39, 37, 37);

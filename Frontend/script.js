@@ -30,4 +30,4 @@ function getTopPlayers(){
     });
 }
 
-window.onload = getTopPlayers;
+//window.onload = getTopPlayers;
