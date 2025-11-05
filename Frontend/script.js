@@ -42,14 +42,14 @@ function getAllPlayers(){
                     if(i<3){
                         row.innerHTML = `
                             <td>${medal} ${i+1}</td>
-                            <td>${player.Name}</td>
+                            <td>${player.name}</td>
                             <td>${player.score}</td>
                         `;
                     }
                     else{
                         row.innerHTML = `
                             <td>${$i+1}</td>
-                            <td>${player.Name}</td>
+                            <td>${player.name}</td>
                             <td>${player.score}</td>
                         `;
                     }
