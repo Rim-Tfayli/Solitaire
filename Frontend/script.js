@@ -69,7 +69,7 @@ function addNew(){
         score: score,
         duration: duration
     };
-    axios.post('../Backend/add.php', newPlayer)
+    axios.post('http://localhost/SEFactory/Project1/Backend/add.php', newPlayer)
          .then(res=>{
             alert("Player is added, your score is " + score);
          })
