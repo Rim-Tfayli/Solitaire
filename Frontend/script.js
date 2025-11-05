@@ -2,6 +2,7 @@ function getTopPlayers(){
     axios.get('http://localhost/SEFactory/Project1/Backend/get.php')
     .then(res => {
         const players = res.data;
+        console.log(players);
         const table = document.getElementById("topPlayers");
         const medal = '<i class="fas fa-medal"></i>';
         players.forEach( (player,i) => {
