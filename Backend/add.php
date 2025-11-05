@@ -8,7 +8,7 @@
 
         $name = $_POST['name'];
         $score = $_POST['score'];
-        $durationn = $_POST['duration'];
+        $duration = $_POST['duration'];
          
         $sql = " INSERT INTO players (name, score, duration) values ( '$name', '$score', '$duration' ) ";
         $query = $mysql->query($sql);
