@@ -1,19 +1,17 @@
 <?php
-    $con = mysqli_connect('localhost', 'root', '', 'solitaire');
-
-    if(!$con)
-        die('<p> general error occurred</p>');
-    $query = "select * from players ".
+    include("connection.php");
+    
+    $sql = "SELECT * FROM players ".
               "ORDER BY score DESC";
 
-    $result = mysqli_query($con, $query);
+    $query = $mysql->prepare($sql);
+    $query->execute();
 
-    if(!$result)
-        die("No recorders");
+    $array = $query->get_result();
 
     $players = [];
 
-    while ($row = mysqli_fetch_assoc($result)) {
+    while ($row = $array->fetch_assoc()) {
         $players[] = $row;
     }
 
