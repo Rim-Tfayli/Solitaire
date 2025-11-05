@@ -87,6 +87,7 @@
 .leaderboard a{
     position: absolute;
     text-decoration: none;
+<<<<<<< HEAD
     background-color: rgb(142, 21, 8);
     color: white;
     margin-top: 0.5rem;
@@ -95,6 +96,16 @@
 .leaderboard a:hover{
     opacity: 70%;
     transform: translateY(-0.25rem);
+=======
+    font-size: clamp(1rem, 1.5vw, 1rem);
+    background-color: darkred;
+    color: #a59f9f;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+.leaderboard a:hover{
+    transform: translateY(-20%);
+>>>>>>> cd-scores-page
 }
 
 .footer{
@@ -102,9 +113,11 @@
     width: 100%;
     bottom: 0px;
     text-align: center;
+    padding-top: 8rem;
+}
+.footer p{
     border-top: 0.025rem solid rgb(39, 37, 37);
 }
-
 
 .footer *{
     color: rgb(39, 37, 37);

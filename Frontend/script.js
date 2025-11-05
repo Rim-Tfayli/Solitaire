@@ -31,6 +31,10 @@ function getTopPlayers(){
       console.error("Error while getting data:", error);
     });
 }
+function getAllPlayers(){
+    
+}
+
 
 function getAllPlayers(){
     axios.get('http://localhost/SEFactory/Project1/Backend/get.php')
