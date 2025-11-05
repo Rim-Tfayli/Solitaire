@@ -1,10 +1,8 @@
-const button = document.getElementById("submit");
-
 function getTopPlayers(){
     axios.get('http://localhost/SEFactory/Project1/Backend/get.php')
     .then(res => {
         const players = res.data;
-        const table = document.getElementById("toPlayers");
+        const table = document.getElementById("topPlayers");
         const medal = '<i class="fas fa-medal"></i>';
         console.log(players);
         players.forEach( (player,i) => {
@@ -32,6 +30,36 @@ function getTopPlayers(){
       console.error("Error while getting data:", error);
     });
 }
+function getAllPlayers(){
+    axios.get('http://localhost/SEFactory/Project1/Backend/get.php')
+    .then(res => {
+        const players = res.data;
+        const table = document.getElementById("players");
+        const medal = '<i class="fas fa-medal"></i>';
+        console.log(players);
+        players.forEach( (player,i) => {
+                    const row = document.createElement("tr");
+                    if(i<3){
+                        row.innerHTML = `
+                            <td>${medal} ${i+1}</td>
+                            <td>${player.Name}</td>
+                            <td>${player.score}</td>
+                        `;
+                    }
+                    else{
+                        row.innerHTML = `
+                            <td>${$i+1}</td>
+                            <td>${player.Name}</td>
+                            <td>${player.score}</td>
+                        `;
+                    }
+                    table.appendChild(row);                 
+        });
+    })
+    .catch(error => {
+      console.error("Error while getting data:", error);
+    });
+}
 function addNew(){
     const name = document.getElementById("name").value;
     const score = Math.floor(Math.random() * 100);
@@ -50,6 +78,8 @@ function addNew(){
          });
 }
 
-
-window.onload = getTopPlayers;
+window.onload = getTopPlayers();
+let button = document.getElementById("submit");
 button.addEventListener("click", addNew);
+let all = document.getElementById("scores")
+all.addEventListener("click", getAllPlayers);
