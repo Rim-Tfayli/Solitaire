@@ -29,5 +29,9 @@ function getTopPlayers(){
       console.error("Error while getting data:", error);
     });
 }
+function getAllPlayers(){
+    
+}
 
-//window.onload = getTopPlayers;
+
+window.onload = getTopPlayers;
