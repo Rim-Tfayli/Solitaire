@@ -1,3 +1,5 @@
+const button = document.getElementById("submit");
+
 function getTopPlayers(){
     axios.get('http://localhost/SEFactory/Project1/Backend/get.php')
     .then(res => {
@@ -29,9 +31,24 @@ function getTopPlayers(){
       console.error("Error while getting data:", error);
     });
 }
-function getAllPlayers(){
-    
+function addNew(){
+    const name = document.getElementById("name");
+    const score = Math.floor(Math.random() * 100);
+    const duration = Math.floor(Math.random() * 60);
+    const newPlayer = {
+        name: name,
+        score: score,
+        duration: duration
+    };
+    axios.post('add.php', newPlayer)
+         .then(res=>{
+            alert("Player is added, your score is", + score);
+         })
+         .catch(error=>{
+            alert("Failed to add Player");
+         });
 }
 
 
 window.onload = getTopPlayers;
+button.addEventListener("click", addNew);
