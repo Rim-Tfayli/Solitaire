@@ -3,14 +3,14 @@
   
     $sql = "SELECT * FROM players ".
               "ORDER BY score DESC";
-    $query = $mysql->prepae($sql);
+    $query = $mysql->prepare($sql);
     $query->execute();
 
     $array = $query->get_result();
 
     $players = [];
 
-    while ($row = mysqli_fetch_assoc($result)) {
+    while ($row = mysqli_fetch_assoc($array)) {
         $players[] = $row;
     }
 

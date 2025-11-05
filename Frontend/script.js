@@ -6,6 +6,7 @@ function getTopPlayers(){
         const players = res.data;
         const table = document.getElementById("toPlayers");
         const medal = '<i class="fas fa-medal"></i>';
+        console.log(players);
         players.forEach( (player,i) => {
                 while(i<10){
                     const row = document.createElement("tr");
@@ -32,7 +33,7 @@ function getTopPlayers(){
     });
 }
 function addNew(){
-    const name = document.getElementById("name");
+    const name = document.getElementById("name").value;
     const score = Math.floor(Math.random() * 100);
     const duration = Math.floor(Math.random() * 60);
     const newPlayer = {
@@ -40,9 +41,9 @@ function addNew(){
         score: score,
         duration: duration
     };
-    axios.post('add.php', newPlayer)
+    axios.post('../Backend/add.php', newPlayer)
          .then(res=>{
-            alert("Player is added, your score is", + score);
+            alert("Player is added, your score is " + score);
          })
          .catch(error=>{
             alert("Failed to add Player");
