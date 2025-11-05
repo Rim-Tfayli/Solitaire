@@ -2,7 +2,7 @@ function getTopPlayers(){
     axios.get('http://localhost/SEFactory/Project1/Backend/get.php')
     .then(res => {
         const players = res.data;
-        const table = document.getElementById("topPlayers");
+        const table = document.getElementById("toPlayers");
         const medal = '<i class="fas fa-medal"></i>';
         players.forEach( (player,i) => {
                 while(i<10){

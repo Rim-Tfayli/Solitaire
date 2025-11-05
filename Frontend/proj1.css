@@ -6,6 +6,8 @@
 }
 .main{
     position: relative;
+    min-height: 35rem;
+
 }
 .hero-section{
     position: relative;
@@ -117,3 +119,16 @@
     opacity: 70% ;
 }
 
+.main form{
+    padding-top: 20rem;
+    padding-left: 5rem;
+}
+.main input, button{
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
+}
+.main h2{
+    font-size:clamp(3rem, 6vw, 5rem);
+}
