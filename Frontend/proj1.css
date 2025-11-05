@@ -11,8 +11,8 @@
     position: relative;
     width: 100%;
     min-height: 35rem;
-    color: rgb(105, 13, 3);
-    background-color: rgb(74, 68, 68);
+    color: rgb(142, 21, 8);
+    background-color: rgb(39, 37, 37);
 }
 .hero-section .info{
     position: absolute;
@@ -23,12 +23,13 @@
 .hero-section h1{  
     font-size: clamp(4rem, 7vw, 6rem);
     font-family: 'Abril Fatface', serif;
-    text-shadow: 2px 2px 4px #7c7676;
+    text-shadow: 2px 2px 4px #a59f9f;
 }
 .stars{
     padding-top: 2rem;
     color: rgb(223, 165, 16);
     font-size: clamp(1rem, 4vw, 3rem);
+    text-shadow: 2px 2px 4px #a59f9f;
 }
 .info img{
     padding-top: 2rem;
@@ -48,32 +49,37 @@
 }
 
 .about-section{
-    padding: 1.5rem;
+    padding: 2rem;
     position: relative;
     top: 3rem;
+    padding-right:3rem;
+    padding-left:3rem;
 }
 .about-section h2{
-    color: #3f3b3b;
+    color: rgb(142, 21, 8);
     font-style: normal;
 }
 
 .about-section p{
+    color: rgb(39, 37, 37);
     padding-top: 1rem;
-    color: black;
     font-size: clamp(1rem, 1.5vw, 1rem);
-    text-align: justify;
     line-height: 1.5;
+    font-weight: lighter;
 }
 
 .leaderboard{
     position: relative;
     padding: 1.5rem;
+    padding-right:3rem;
+    padding-left:3rem;
 }
 .leaderboard h1{
     font-size: clamp(3.5rem, 6vw, 5.5rem);
     font-family: 'Abril Fatface', serif;
     text-shadow: 2px 2px 4px #7c7676;
-    padding-top: 5rem;
+    padding-top: 3rem;
+    color:  rgb(142, 21, 8);
 }
 
 .footer{
@@ -81,12 +87,12 @@
     width: 100%;
     bottom: 0px;
     text-align: center;
-    background-color: blue;
+    border-top: 0.025rem solid rgb(39, 37, 37);
 }
 
 
 .footer *{
-    color: beige;
+    color: rgb(39, 37, 37);
     padding: 0.25rem;
     font-size: 20px;
 }
