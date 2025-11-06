@@ -2,27 +2,28 @@ function getTopPlayers(){
     axios.get('http://localhost/SEFactory/Project1/Backend/get.php')
     .then(res => {
         const players = res.data;
-        const table = document.getElementById("topPlayers");
-        const medal = '<i class="fas fa-medal"></i>';
+       /* const table = document.getElementById("topPlayers");
+        const medal = '<i class="fas fa-medal"></i>';*/
         console.log(players);
         players.forEach( (player,i) => {
                 while(i<10){
-                    const row = document.createElement("tr");
+                   /* const row = document.createElement("tr");
                     if(i<3){
                         row.innerHTML = `
                             <td>${medal} ${i+1}</td>
-                            <td>${player.Name}</td>
+                            <td>${player.name}</td>
                             <td>${player.score}</td>
                         `;
                     }
                     else{
                         row.innerHTML = `
                             <td>${$i+1}</td>
-                            <td>${player.Name}</td>
+                            <td>${player.name}</td>
                             <td>${player.score}</td>
                         `;
                     }
-                    table.appendChild(row);
+                    table.appendChild(row);*/
+                    console.log(player.name);
                 }              
         });
     })
@@ -30,7 +31,7 @@ function getTopPlayers(){
       console.error("Error while getting data:", error);
     });
 }
-function getAllPlayers(){
+/*function getAllPlayers(){
     axios.get('http://localhost/SEFactory/Project1/Backend/get.php')
     .then(res => {
         const players = res.data;
@@ -76,9 +77,9 @@ function addNew(){
             alert("Failed to add Player");
          });
 }
-
-window.onload = getTopPlayers();
+*/
+window.onload = getTopPlayers();/*
 let button = document.getElementById("submit");
 button.addEventListener("click", addNew);
 let all = document.getElementById("scores")
-all.addEventListener("click", getAllPlayers);
+all.addEventListener("click", getAllPlayers);*/
