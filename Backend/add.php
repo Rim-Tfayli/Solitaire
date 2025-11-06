@@ -1,18 +1,20 @@
 <?php
-    include("connection.php");
+    include("./connection/connection.php");
 
     $json = file_get_contents('php://input');
     $_POST = json_decode($json, true);
 
 
-    if(isset($_POST['name']) && isset($_POST['score']) && isset($_POST['duration'])){
+    if(isset($_POST['name'])){
 
         $name = $_POST['name'];
-        $score = $_POST['score'];
-        $duration = $_POST['duration'];
+        $score = rand(1, 100);
+        $duration = rand(1, 60);
         
-        $sql = " INSERT INTO players (name, score, duration) values ( '$name', '$score', '$duration' ) ";
-        $query = $mysql->query($sql);
+        $sql = " INSERT INTO players (name, score, duration) values (?, ?, ?) ";
+        $query = $mysql->prepare($sql);
+        $query->bind_param("sii", $name, $score, $duration);
+        $query->execute();
 
         if($query){
             echo"Player Added";

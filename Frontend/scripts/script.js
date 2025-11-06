@@ -66,16 +66,11 @@ function addNew(){
         alert("name is required");
         return;
     }
-    const score = Math.floor(Math.random() * 100);
-    const duration = Math.floor(Math.random() * 60);
-    const newPlayer = {
-        name: name,
-        score: score,
-        duration: duration
-    };
-    axios.post('http://localhost/SEFactory/Project1/Backend/add.php', newPlayer)
+    axios.post('http://localhost/SEFactory/Project1/Backend/add.php', {
+        name:name }
+    )
          .then(res=>{
-            alert("Player is added, your score is " + score);
+            alert(res.data);
          })
          .catch(error=>{
             alert("Failed to add Player");
