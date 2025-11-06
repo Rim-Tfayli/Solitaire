@@ -6,7 +6,7 @@ function getTopPlayers(){
         const medal = '<i class="fas fa-medal"></i>';
         console.log(players);
         players.forEach( (player,i) => {
-                while(i<10){
+                if(i<10){
                     /*const row = document.createElement("tr");
                     if(i<3){
                         row.innerHTML = `
@@ -30,7 +30,7 @@ function getTopPlayers(){
     .catch(error => {
       console.error("Error while getting data:", error);
     });
-}
+}/*
 function getAllPlayers(){
     axios.get('http://localhost/SEFactory/Project1/Backend/get.php')
     .then(res => {
@@ -78,4 +78,4 @@ function addNew(){
          });
 }
 let button = document.getElementById("submit");
-button.addEventListener("click", addNew);
+button.addEventListener("click", addNew);*/
