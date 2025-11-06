@@ -76,7 +76,7 @@ function addNew(){
         name:name }
     )
          .then(res=>{
-            alert(res.data);
+            alert("Player is added!");
          })
          .catch(error=>{
             alert("Failed to add Player");
