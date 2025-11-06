@@ -82,5 +82,5 @@ function addNew(){
             alert("Failed to add Player");
          });
 }
-let button = document.getElementById("submit");
+const button = document.getElementById("submit");
 button.addEventListener("click", addNew);
