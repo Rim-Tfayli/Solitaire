@@ -4,7 +4,7 @@ function getTopPlayers(){
         const players = res.data;
         const table = document.getElementById("topPlayers");
         const medal = '<i class="fas fa-medal"></i>';
-        console.log(players);
+        //console.log(players);
         players.forEach( (player,i) => {
                 if(i<10){
                     const row = document.createElement("tr");
@@ -30,12 +30,12 @@ function getTopPlayers(){
     .catch(error => {
       console.error("Error while getting data:", error);
     });
-}/*
+}
 function getAllPlayers(){
     axios.get('http://localhost/SEFactory/Project1/Backend/get.php')
     .then(res => {
         const players = res.data;
-        const table = document.getElementById("players");
+        const table = document.getElementById("allPlayers");
         const medal = '<i class="fas fa-medal"></i>';
         console.log(players);
         players.forEach( (player,i) => {
@@ -49,7 +49,7 @@ function getAllPlayers(){
                     }
                     else{
                         row.innerHTML = `
-                            <td>${$i+1}</td>
+                            <td>${i+1}</td>
                             <td>${player.name}</td>
                             <td>${player.score}</td>
                         `;
@@ -78,4 +78,4 @@ function addNew(){
          });
 }
 let button = document.getElementById("submit");
-button.addEventListener("click", addNew);*/
+button.addEventListener("click", addNew);
