@@ -107,7 +107,7 @@ th{
     font-size: clamp(1.5rem, 4vw, 3rem);
 }
 table{
-    width: 60%;
+    width: 65%;
     border-radius: 1rem; 
 }
 .fa-medal{
@@ -163,14 +163,22 @@ td{
 @media screen and (max-width: 600px) {
   .hero-section {
     min-height: auto;
-    height: 25rem;
+    height: 22rem;
     text-align: center;
     padding: 1.5rem 1rem;
   }
   .hero-section h1, .hero-section .stars, .info img{
-    transform: translateY(50%);
+    transform: translateY(5%);
   }
   .main input, button{
         padding: 0.5rem;
   }
+  table{
+    width: 40%;
+  }
+  #newPlayer h2{
+    transform: translateX(-20%);
+    transform: translateY(-55%);
+  }
+  
 }
