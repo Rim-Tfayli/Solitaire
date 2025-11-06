@@ -23,7 +23,4 @@
             echo"Something went wrong";
         }        
     }
-    else{
-        echo"Some info are missing";
-    }
 ?>
