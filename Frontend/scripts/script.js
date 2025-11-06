@@ -7,7 +7,7 @@ function getTopPlayers(){
         console.log(players);
         players.forEach( (player,i) => {
                 if(i<10){
-                    /*const row = document.createElement("tr");
+                    const row = document.createElement("tr");
                     if(i<3){
                         row.innerHTML = `
                             <td>${medal} ${i+1}</td>
@@ -17,13 +17,13 @@ function getTopPlayers(){
                     }
                     else{
                         row.innerHTML = `
-                            <td>${$i+1}</td>
+                            <td>${i+1}</td>
                             <td>${player.name}</td>
                             <td>${player.score}</td>
                         `;
                     }
-                    table.appendChild(row);*/
-                    console.log(player.name);
+                    table.appendChild(row);
+                  //  console.log(player.name);
                 }              
         });
     })
