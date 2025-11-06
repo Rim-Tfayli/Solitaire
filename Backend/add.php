@@ -5,7 +5,7 @@
     $_POST = json_decode($json, true);
 
 
-    if(isset($_POST['name'])){
+    if(isset($_POST['name']) && $_POST['name']!=""){
 
         $name = $_POST['name'];
         $score = rand(1, 100);
@@ -17,10 +17,21 @@
         $query->execute();
 
         if($query){
-            echo"Player Added";
+            $success = true;
+            $error = "";
         }
         else{
-            echo"Something went wrong";
+            $success = false;
+            $error = "";
         }        
     }
+    else{
+        $success = false;
+        $error = "Name field is missing";
+    }
+    $response = [];
+    $response["error"] = $error;
+    $response["success"] = $success;
+    echo json_encode($response);
+    return;
 ?>
