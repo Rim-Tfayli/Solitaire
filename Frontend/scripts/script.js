@@ -1,43 +1,51 @@
-function getTopPlayers(){
-    axios.get('http://localhost/SEFactory/Project1/Backend/get.php')
-    .then(res => {
-        const players = res.data;
-        const table = document.getElementById("topPlayers");
-        const medal = '<i class="fas fa-medal"></i>';
+const BASE_URL = "http://localhost/SEFactory/Project1/Backend/";
+const medal = '<i class="fas fa-medal"></i>';
+
+getPlayers();
+
+async function getPlayers() {
+    const url = BASE_URL + "get.php";
+    try {
+        const res = await axios.get(url);
+        const players =res.data
         console.log(players);
-        players.forEach( (player,i) => {
-                while(i<10){
-                    const row = document.createElement("tr");
-                    if(i<3){
-                        row.innerHTML = `
-                            <td>${medal} ${i+1}</td>
-                            <td>${player.Name}</td>
-                            <td>${player.score}</td>
-                        `;
-                    }
-                    else{
-                        row.innerHTML = `
-                            <td>${$i+1}</td>
-                            <td>${player.Name}</td>
-                            <td>${player.score}</td>
-                        `;
-                    }
-                    table.appendChild(row);
-                }              
-        });
-    })
-    .catch(error => {
-      console.error("Error while getting data:", error);
-    });
+        return players; 
+    } 
+    catch{
+        console.error("Error while getting data:");
+    }
 }
-function getAllPlayers(){
-    axios.get('http://localhost/SEFactory/Project1/Backend/get.php')
-    .then(res => {
-        const players = res.data;
-        const table = document.getElementById("players");
-        const medal = '<i class="fas fa-medal"></i>';
-        console.log(players);
-        players.forEach( (player,i) => {
+
+
+async function getTopPlayers(){   
+    const players = await getPlayers(); 
+    const table = document.getElementById("topPlayers"); 
+    players.forEach( (player,i) => {
+            if(i<10){
+                const row = document.createElement("tr");
+                if(i<3){
+                    row.innerHTML = `
+                        <td>${medal} ${i+1}</td>
+                        <td>${player.name}</td>
+                        <td>${player.score}</td>
+                    `;
+                }
+                else{
+                    row.innerHTML = `
+                        <td>${i+1}</td>
+                        <td>${player.name}</td>
+                        <td>${player.score}</td>
+                    `;
+                }
+                table.appendChild(row);
+            }              
+    });
+} 
+ 
+async function getAllPlayers(){
+    const players = await getPlayers(); 
+    const table = document.getElementById("allPlayers"); 
+    players.forEach( (player,i) => {
                     const row = document.createElement("tr");
                     if(i<3){
                         row.innerHTML = `
@@ -48,25 +56,23 @@ function getAllPlayers(){
                     }
                     else{
                         row.innerHTML = `
-                            <td>${$i+1}</td>
+                            <td>${i+1}</td>
                             <td>${player.name}</td>
                             <td>${player.score}</td>
                         `;
                     }
                     table.appendChild(row);                 
         });
-    })
-    .catch(error => {
-      console.error("Error while getting data:", error);
-    });
 }
+
 function addNew(){
+    const url = BASE_URL + "add.php";
     const name = document.getElementById("name").value;
     if(name.trim() == ""){
         alert("name is required");
         return;
     }
-    axios.post('http://localhost/SEFactory/Project1/Backend/add.php', {
+    axios.post(url, {
         name:name }
     )
          .then(res=>{
@@ -76,9 +82,5 @@ function addNew(){
             alert("Failed to add Player");
          });
 }
-
-window.onload = getTopPlayers();
 let button = document.getElementById("submit");
 button.addEventListener("click", addNew);
-let all = document.getElementById("scores")
-all.addEventListener("click", getAllPlayers);
