@@ -62,6 +62,10 @@ function getAllPlayers(){
 }
 function addNew(){
     const name = document.getElementById("name").value;
+    if(name.trim() == ""){
+        alert("name is required");
+        return;
+    }
     const score = Math.floor(Math.random() * 100);
     const duration = Math.floor(Math.random() * 60);
     const newPlayer = {
