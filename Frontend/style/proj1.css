@@ -88,9 +88,10 @@
     position: absolute;
     text-decoration: none;
     background-color: rgb(142, 21, 8);
+    border-radius: 1rem;
     color: white;
     margin-top: 0.5rem;
-    padding: 0.5rem;
+    padding: 1rem;
 }
 .leaderboard a:hover{
     opacity: 70%;
@@ -100,6 +101,7 @@ th{
     color:  rgb(142, 21, 8);
     background-color: rgb(120, 119, 119);
     border: 1px solid #ddd;
+    border-radius: 1rem;
     padding: 1rem;
     text-align: left;
     font-size: 2rem;
@@ -108,7 +110,7 @@ table{
     width: 70%;
     border-radius: 1rem; 
 }
-.fas{
+.fa-medal{
     color:rgb(142, 21, 8);
     font-size: 2rem;
 }
@@ -116,6 +118,11 @@ tr{
     height: 3rem;
     font-size: 2rem;
 }
+td{ 
+    border: 1px solid rgb(142, 21, 8);
+    border-radius: 1rem;
+    padding: 1rem;
+ }
 
 .footer{
     position: relative;
