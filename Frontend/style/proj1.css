@@ -167,14 +167,17 @@ td{
     text-align: center;
     padding: 1.5rem 1rem;
   }
-  .hero-section h1, .hero-section .stars, .info img{
-    transform: translateY(5%);
+
+    .hero-section h1, .hero-section .stars, .info img{
+        transform: translateY(-35%);
+        padding-top: 0.3rem;
   }
   .main input, button{
         padding: 0.5rem;
   }
   table{
-    width: 40%;
+    width: 30%;
+    transform: translateX(-10%);
   }
   #newPlayer h2{
     transform: translateX(-20%);
