@@ -167,7 +167,6 @@ td{
     text-align: center;
     padding: 1.5rem 1rem;
   }
-
     .hero-section h1, .hero-section .stars, .info img{
         transform: translateY(-35%);
         padding-top: 0.3rem;
@@ -179,9 +178,8 @@ td{
     width: 30%;
     transform: translateX(-10%);
   }
-  #newPlayer h2{
-    transform: translateX(-20%);
-    transform: translateY(-55%);
+  #newPlayer{  
+    padding: 1rem;
   }
-  
+ 
 }
